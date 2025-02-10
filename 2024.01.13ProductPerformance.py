@@ -5,8 +5,6 @@ import datetime
 import matplotlib.pyplot as plt
 import seaborn as sns
 
-
-
 #reading in file to create dataframe
 #finding the encoding of the file
 with open('/home/tim/Documents/UAEPlacement./CodingChallenges/Product_performance.txt', 'rb') as file:
