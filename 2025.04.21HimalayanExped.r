@@ -124,15 +124,46 @@ ggplot(o2_use_by_year_season, aes(x = factor(YEAR), y = oxygen_used, fill = SEAS
        fill = "Season") +
   theme_minimal()
 
-# install.packages("tidyplots")
+# # install.packages("tidyplots")
+# library(tidyplots)
+# library(ggplot2)
+# 
+# # Make sure the data is in the right format for ggplot
+# # Ensure the dataset has proper aggregated counts if needed
+# o2_use_by_year_season_summary <- o2_use_by_year_season %>%
+#   dplyr::group_by(YEAR, SEASON_FACTOR) %>%
+#   dplyr::summarize(oxygen_used = sum(oxygen_used, na.rm = TRUE))
+# 
+# # Create the plot
+# ggplot(o2_use_by_year_season_summary, aes(x = YEAR, y = oxygen_used, fill = SEASON_FACTOR)) +
+#   geom_bar(stat = "identity") +
+#   labs(
+#     title = "Oxygen Use Over Time by Season (tidyplots)",
+#     x = "Year",
+#     y = "Number of Expeditions",
+#     fill = "Season"
+#   ) +
+#   theme_minimal()
+
 library(tidyplots)
 
-# tidy_barplot(
-#   data = o2_use_by_year_season,
-#   x = YEAR,
-#   y = count,
-#   fill = oxygen_used,
-#   title = "Oxygen Use Per Year (tidyplots)",
-#   xlab = "Year",
-#   ylab = "Number of Expeditions"
-# )
+library(tidyplots)
+
+tidyplot(country_success_stage) %>%
+  add_col(x = "NATION_LABEL", y = "success_rate", fill = "Success_Stage", position = "dodge") %>%
+  add_text(aes(label = sprintf("%.1f%%", success_rate)), position = position_dodge(width = 0.8), vjust = -0.5, size = 3) %>%
+  add_title("Success Rates by Country and Success Stage") %>%
+  adjust_x_axis_title("Country (Participants)") %>%
+  adjust_y_axis_title("Success Rate (%)") %>%
+  adjust_legend_title("Success Column") %>%
+  theme_tidyplot() %>%
+  adjust_x_axis(angle = 45)
+
+
+
+
+
+
+
+
+
