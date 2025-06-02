@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+# Download JSON, extract name and creditcard, filter out nulls, save as CSV
+wget -qO- https://gist.githubusercontent.com/jorinvo/7f19ce95a9a842956358/raw/e319340c2f6691f9cc8d8cc57ed532b5093e3619/data.json \
+  | jq -r '[.[] | select(.name != null and .creditcard != null) | {name, creditcard}]' \
+  | jq -r '(.[0] | keys_unsorted) as $cols | $cols, map([.[ $cols[] ]])[] | @csv' \
+  > "$(date +%Y%m%d).csv"
+
