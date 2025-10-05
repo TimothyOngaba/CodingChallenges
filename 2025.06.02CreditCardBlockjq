@@ -5,4 +5,25 @@ wget -qO- https://gist.githubusercontent.com/jorinvo/7f19ce95a9a842956358/raw/e3
   | jq -r '[.[] | select(.name != null and .creditcard != null) | {name, creditcard}]' \
   | jq -r '(.[0] | keys_unsorted) as $cols | $cols, map([.[ $cols[] ]])[] | @csv' \
   > "$(date +%Y%m%d).csv"
+<<<<<<< HEAD
+  
+Hello Dr. Hitchings,
+I am Timothy Ongaba, a biomedical scientist and recent MSc graduate in Biomedical Sciences from Nottingham Trent University. More importantly, I am an intending applicant for the advertised project, and I would like to have an informal chat about it. My background includes an Msc in Biomedical Sciences from Nottingham Trent University, where I researched the molecular mechanisms underlying prostate cancer progression. Prior to that is an MSc in Molecular Biology and Biotechnology and a BSc in Biomedical Laboratory Technology, with research focusing on a protein target for drug repurposing in prostate cancer. I have attached my CV for more details in case it might be helpful. 
 
+I have read two of your papers- one on NGS and comparative genomics for Bayesian identification of bacterial strains from sequencing data, and another on how aspirin resensitises colorectal cancer cells to glutaminase inhibition. I found these align somewhat with the project's proposed methods. 
+While I agree microbes like H. pylori, Fusobacterium nucleatum, and others have roles in GIT cancer types, I recognise their roles vary with the diversity of the microbial community within the tumour microenvironment. I think of it like different weights in a neural network, especially when it comes to developing a clinical decision aid. 
+I am keen to leverage my background and learn more in the context of pancreatic and oesophageal cancer.
+
+I have completed a research placement in a cancer genetics research group and gained work experience in a clinical scientific computing team. I intend to leverage my skills in NGS data analysis, programming in R/Python, and machine learning to contribute effectively to this project. I am familiar with R packages such as Tidyverse, feature selection with Boruta and SIAMCAT for metadata analysis, as well as SEURAT for single- cell RNA sequencing. Additionally, I have four years of wet lab experience in molecular lab research and cell biology industry labs. 
+I have also used Snakemake for high- performance computing to access data from large databases, similar to what is involved in Genomics England' s 100, 000 Genomes Project.
+
+If you have the time, I would appreciate the opportunity to meet remotely for 30 minutes to learn more about the project and the flow of the proposed methods, especially how insilico approaches and wet lab protocols can work together to investigate hypotheses. 
+I am available to meet any morning tomorrow or within the next two weeks, as I mostly work late shifts (2-10pm).
+
+Thank you for your time. I would be delighted to have this chat. 
+
+Regards,
+Tim
+=======
+
+>>>>>>> 25daedc0830548cd4d5d664f1e02a7b0c03c1366
